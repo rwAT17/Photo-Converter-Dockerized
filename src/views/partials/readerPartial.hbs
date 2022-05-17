@@ -1,0 +1,111 @@
+			<nav class="navigation">
+			<div class="nav-bar">
+		  <div class="nav-wrapper">
+             <a class="nav-bar__link material-bubble" href="/">Home</a>
+	         <a class="nav-bar__link material-bubble" href="/profiles">Profiles</a>
+	         <a class="nav-bar__link material-bubble" href="/addProfile">Add Profile</a>
+	         <a class="nav-bar__link material-bubble" href="/Docs">Docs</a>
+          </div>
+		</div>
+       </nav> 
+
+<div class="wrapper">
+	<div class="current-location">
+	 <p> You are now in</p>
+	 <div class="current-location__path"> {{#each location}}
+	<a class="current-location__link" href="/reader?page={{this.url}}">{{this.name}}</a>
+	<p>/</p>
+	 {{/each}}</div>
+	
+</div>
+
+<div class='files-box'>
+	<div class='columns-names'>
+		<div class='columns-names'><p>Name:</p></div>
+		<div class='columns-names'><p>Last edited on:</p></div>
+		<div class='columns-names'><p>Size:</p></div>
+	</div>
+
+
+	<div class="columns-data">
+<form method='POST' action="/reader">
+<input type="hidden" name="dirName" value="{{dirName}}/">
+        <div class="file-row">
+                 {{#each fileList}} 
+					 {{#if isDirectory}}
+                    <div class="columns-data__name">    
+                      <img id="imgMini" class="column-img"  src="/icons/16673999841535958152.svg" alt="">
+                     <a class="columns-data__link" href='{{../url}}/{{this.name}}'> <div>{{this.name}}</div></a>
+					</div>
+                     <div class="columns-data__edit">{{this.time}}</div>
+			         <div class="columns-data__size">{{this.size}}</div>
+					{{/if}}
+			      {{/each}} 
+
+
+				 {{#each fileList}} 
+					 {{#if isFile}}
+					<div class="columns-data__name">    
+					      <input type='checkbox' id='' name='filesArr' value='{{this.name}}'/>
+                      <img id="imgMini" class="column-img"  src="/icons/5752709981538117042.svg" alt="">
+                     <a class="columns-data__link" href='{{../url}}/{{this.name}}'> <div>{{this.name}}</div></a>
+					</div>
+                     <div class="columns-data__edit">{{this.time}}</div>
+			         <div class="columns-data__size">{{this.size}}</div>
+					{{/if}}
+			    {{/each}} 
+        </div>
+     </div>
+	 
+    </div>
+ <div class="form-submit">		
+     <select name="profile">
+	     {{#each profiles}}
+	     <option  value='{{this.name}}'>
+             {{this.name}}
+	     </option>
+	     {{/each}}
+     </select>
+	 <button name='edit' formaction='/reader' type='submit' value='Convert'>Convert</button>
+	 <button name='edit' formaction='/allProfilesHandler' type='submit' value='Convert'>Convert all</button>
+	 
+     </div>
+    
+	</form>
+ </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{!-- 
+
+               {{#each fileList}} 
+                    <div class="columns-data__name">    
+					 {{#if isDirectory}}
+                      <img id="imgMini" class="column-img"  src="/icons/16673999841535958152.svg" alt="">
+                    {{/if}}
+					 {{#if isFile}}
+                      <img id="imgMini" class="column-img" src="/icons/5752709981538117042.svg" alt="">
+                    {{/if}}
+                     <a class="columns-data__link" href='{{../url}}/{{this.name}}'> <div>{{this.name}}</div></a>
+					</div>
+                     <div class="columns-data__edit">{{this.time}}</div>
+			         <div class="columns-data__size">{{this.size}}</div>
+			        {{/each}}  --}}

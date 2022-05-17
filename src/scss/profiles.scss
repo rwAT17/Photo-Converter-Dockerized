@@ -1,0 +1,139 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+body {
+	position: relative;
+	overflow-x: hidden;
+	font-size: 1.6rem;
+	font-family: 'Raleway', sans-serif;
+	background-color: #eabf9f;
+}
+
+a {
+	color: #5f6caf;
+}
+
+.wrapper {
+	justify-content: center;
+	align-items: start;
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	grid-template-rows: repeat(12, 1fr);
+	grid-column-gap: 1em;
+	grid-row-gap: 1em;
+	margin: 0 auto;
+	height: 100vh;
+	width: 100%;
+	max-width: 1200px;
+	background-color: #eabf9f;
+}
+
+.front {
+	width: 100vw;
+	height: 100vh;
+	background-color: #eabf9f;
+}
+
+.navigation {
+	top: 0;
+	position: sticky;
+	grid-row: 1/2;
+	grid-column: 1/-1;
+	background-color: #ff8364;
+	width: 100%;
+	z-index: 10123200;
+}
+
+.nav-wrapper {
+	max-width: 1200px;
+}
+
+.nav-bar {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 5rem;
+	background-color: #1e212d;
+	border: none;
+	font-size: 2rem;
+}
+
+.nav-bar__link {
+	padding: 1rem;
+	color: #ff8364;
+	text-decoration: none;
+	&:hover {
+		transition: all 0.5s ease;
+		color: #001f3f;
+		background-color: #fff;
+		border: none;
+	}
+}
+
+.profiles-container {
+	grid-row: 1/12;
+	grid-column: 1/13;
+	display: flex;
+
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.profile-form {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	border-radius: 10px;
+	font-size: 2rem;
+	margin: 2rem;
+}
+.profile {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 30%;
+	min-width: 300px;
+	font-size: 2rem;
+	margin: 4rem;
+	border-radius: 10px;
+	// background-color: royalblue;
+
+	&__position {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		min-width: 100%;
+		text-align: left;
+		margin: 1rem;
+		padding: 0 0.5rem;
+		border: 3px solid #1e212d;
+		border-radius: 5px;
+		height: 4rem;
+	}
+
+	&__value {
+		width: 100%;
+		text-align: left;
+		line-height: 4rem;
+		height: 100%;
+		font-size: 1.5rem;
+		background-color: #eabf9f;
+	}
+
+	&__name {
+		position: absolute;
+		left: 10px;
+		bottom: 2.5rem;
+		background-color: #eabf9f;
+	}
+}
