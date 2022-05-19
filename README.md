@@ -1,10 +1,12 @@
 # PhotoConverter
 
-1. Create env var path to directory where you hold photos
+Change paths in .env file inside project 
+
+>
 
 bash export HOST_IMAGE_DATA=/path/to/my/photos
 
-2. Open Terminal in directory where dockerfile is located
+>
  
  docker run node:16
  
