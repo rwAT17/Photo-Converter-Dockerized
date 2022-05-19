@@ -1,4 +1,7 @@
 # PhotoConverter
+install MongoDB and mongosh
+
+----------
 
 Change paths in .env file inside project 
 
